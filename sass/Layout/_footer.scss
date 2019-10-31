@@ -1,0 +1,77 @@
+.footer {
+    @include styleText($color-gray-4, $fs-1, $fw-normal);
+    .footer__main {
+        padding: $pd-4 0;
+        .footer__main__left {
+            ul {
+                display: flex;
+                flex-direction: column;
+                flex-wrap: wrap;
+                height: 110px;
+                list-style-type: none;
+                li {
+                    flex: 25%;
+                    flex-grow: 0;
+                    a {
+                        text-decoration: none;
+                        @include styleText($color-blue, $fs-1, $fw-normal);
+                        &:hover {
+                            color: $color-black-0;
+                        }
+                    }
+                }
+            }
+        }
+        .footer__main__right {
+            button {
+                position: relative;
+                font-size: $fs-1;
+                min-width: 160px;
+                &::after {
+                    position: absolute;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    right: 12px;
+                }
+            }
+            a {
+                @include styleText($color-gray-4, $fs-1, $fw-normal);
+            }
+        }
+    }
+    .footer__bottom {
+        padding: $pd-4 - 2 0;
+        .footer__copyright {
+            img {
+                width: 110px;
+                margin-right: $mg-1 * 2;
+            }
+        }
+        .footer__links {
+            ul {
+                margin: 0;
+                li {
+                    display: inline-block;
+                    padding: $pd-0 + 1;
+                    a {
+                        color: $color-blue;
+                        &:hover {
+                            color: $color-black-0;
+                        }
+                    }
+                }
+                .footer__sitemap {
+                    display: none;
+                    @include mediaQuery('medium') {
+                        display: inline-block;
+                    }
+                }
+            }
+        }
+    }
+    .hr-end {
+        margin: 0;
+        height: 6px;
+        background: $color-red-0;
+    }
+}

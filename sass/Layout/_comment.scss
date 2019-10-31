@@ -1,0 +1,76 @@
+.comment {
+    background-color: $color-gray-5;
+    .owl-carousel .owl-nav button.owl-prev,
+    .owl-carousel .owl-nav button.owl-next {
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    .comment__wrap {
+        padding: $pd-4 0;
+        h3 {
+            @include styleText($color-black-0, $fs-3, $fw-bold-0);
+            margin-bottom: $mg-2;
+        }
+        @include mediaQuery('medium') {
+            padding: $pd-4 15px;
+        }
+        .comment__content {
+            .card {
+                padding: $pd-4;
+                .card-top {
+                    margin-bottom: 18px;
+                    .card-img-top {
+                        display: inline-block;
+                        height: 64px;
+                        width: 64px;
+                        border-radius: 50%;
+                        margin-right: $mg-2;
+                    }
+                    .card-title {
+                        @include styleText($color-black-0, $fs-0 + 1, $fw-bold-0);
+                        margin: 0;
+                    }
+                }
+                .card-body {
+                    padding: 0;
+                    font-size: $fs-0 + 1;
+                }
+            }
+        }
+    }
+    .comment__bottom {
+        .partners {
+            h5 {
+                @include styleText($color-gray-4, $fs-1, $fw-normal);
+                text-align: center;
+                margin: 0;
+                padding-top: $pd-3;
+            }
+            .partners__logo {
+                padding-top: $pd-4;
+                @include mediaQuery('medium') {
+                    flex-wrap: wrap;
+                    width: 300px;
+                    margin: 0 auto;
+                    .logo-item {
+                        margin: 8px 16px;
+                    }
+                }
+            }
+        }
+        .non-student {
+            margin-top: $mg-2;
+            .non-student__teach,
+            .non-student__business {
+                max-width: 320px;
+                padding: $pd-4 0;
+            }
+            .non-student__heading {
+                @include styleText($color-black-light, $fs-2 - 1, $fw-bold-0);
+            }
+            p {
+                padding: $pd-1 0;
+            }
+        }
+    }
+}

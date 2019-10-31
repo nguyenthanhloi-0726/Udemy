@@ -1,0 +1,37 @@
+.udemyCarousel {
+    background: url(../img/cover.jpg) no-repeat center center;
+    background-size: cover;
+    height: 500px;
+    .carousel__content {
+        max-width: 460px;
+        h2 {
+            @include styleText($color-white-0, $fs-4, $fw-bold-0);
+        }
+        p {
+            @include styleText($color-white-0, $fs-2 - 2, $fw-normal);
+        }
+        .searchForm {
+            .form-control {
+                height: 50px;
+                font-size: $fs-2;
+                padding: 11px 17px;
+                border-radius: 0;
+                font-weight: 100;
+                border: none;
+            }
+            .input-group-append {
+                .input-group-text {
+                    @include styleButton($color-white-0, 0, 0, 0);
+                    width: 50px;
+                    height: 50px;
+                    border: none;
+                    @include styleText($color-red-0, $fs-2, $fw-normal);
+                    &:hover {
+                        @include styleButton($color-red-0, 0, 0, 0);
+                        color: $color-white-0;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,64 @@
+@media (min-width: 576px) {
+    .container {
+        max-width: 100%;
+    }
+}
+
+@media (min-width: 768px) {
+    .container {
+        max-width: 750px;
+    }
+}
+
+@media (min-width: 992px) {
+    .container {
+        max-width: 970px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1170px;
+    }
+}
+
+.owl-carousel .owl-nav button.owl-prev,
+.owl-carousel .owl-nav button.owl-next {
+    position: absolute;
+    top: 30%;
+    left: -27.5px;
+    width: 45px;
+    height: 45px;
+    padding: 0;
+    opacity: 1;
+    border-radius: 50%;
+    background: $color-white-0;
+    box-shadow: 0 0 1px 1px rgba(20, 23, 28, .1), 0 3px 1px 0 rgba(20, 23, 28, .1) !important;
+    z-index: 3;
+    span {
+        @include styleText($color-blue, $fs-4, $fw-normal);
+        line-height: 0.6;
+    }
+    &:hover {
+        background: $color-white-0;
+        text-decoration: none;
+        box-shadow: 0 2px 8px 2px rgba(20, 23, 28, .15) !important;
+        span {
+            color: #00576b;
+        }
+    }
+}
+
+.owl-carousel .owl-nav button.owl-next {
+    left: unset;
+    right: -27.5px;
+}
+
+.owl-theme .owl-nav .disabled {
+    opacity: 0 !important;
+}
+
+.owl-stage-outer {
+    padding: 2px 4px 8px;
+    margin: -2px -4px -8px;
+}

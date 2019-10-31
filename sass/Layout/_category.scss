@@ -1,0 +1,21 @@
+.myCategory {
+    padding: 32px 0;
+    h3 {
+        font-size: $fs-3;
+    }
+    .myCategory__grid {
+        .myCategory__item {
+            color: $color-black-0;
+            padding: $pd-0 + $pd-1;
+            margin: $mg-1 0;
+            box-shadow: 0 0 1px 1px rgba(20, 23, 28, .1), 0 3px 1px 0 rgba(20, 23, 28, .1) !important;
+            &:hover {
+                box-shadow: 0 2px 8px 2px rgba(20, 23, 28, .15) !important;
+            }
+            i {
+                font-size: 32px;
+                margin-right: $mg-1;
+            }
+        }
+    }
+}

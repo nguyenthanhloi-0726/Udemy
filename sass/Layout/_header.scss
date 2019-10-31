@@ -1,0 +1,169 @@
+.myNavbar {
+    .dropdown-menu {
+        margin: 0;
+        width: 270px;
+        min-height: 560px;
+        padding: $pd-3 0 0;
+        font-size: $fs-0;
+        border: none;
+        box-shadow: 4px 4px 16px rgba(20, 23, 28, .25) !important;
+    }
+    .dropdown-item {
+        i {
+            font-size: 10px;
+        }
+    }
+    .dropdown-toggle {
+        position: relative;
+        padding: 12px 15px;
+        &::after {
+            content: none;
+        }
+    }
+    .dropdown-menu--main {
+        &::after {
+            content: '';
+            border-style: solid;
+            border-width: 0 10px 10px;
+            border-color: transparent transparent #fff;
+            height: 0;
+            width: 0;
+            position: absolute;
+            left: 14px;
+            top: -10px;
+        }
+        &::before {
+            content: '';
+            border-style: solid;
+            border-width: 0 10px 10px;
+            border-color: transparent transparent $color-gray-6;
+            height: 0;
+            width: 0;
+            position: absolute;
+            left: 14px;
+            top: -11px;
+        }
+    }
+    .dropdown-submenu>.dropdown-menu {
+        top: 0;
+        left: 100%;
+        margin-top: 0px;
+        margin-left: 0px;
+        background-color: #f7f8fa;
+    }
+    .dropdown-item:hover {
+        background: #f2f3f5;
+        color: #007791;
+    }
+    .dropdown-submenu:hover>.dropdown-menu {
+        display: block;
+    }
+}
+
+// END TEST
+.udemyNavbar {
+    @include styleText($color-black-light, $fs-1, $fw-normal);
+    .navbar-nav {
+        .nav-link {
+            @include styleText($color-black-light, $fs-1, $fw-normal);
+        }
+    }
+    .navbar-brand {
+        img {
+            width: 110px;
+        }
+    }
+    .header__left {
+        display: flex;
+        align-items: center;
+        .catagory-label {
+            color: $color-black-light;
+            @include styleButton(transparent, transparent, 12px, 15px);
+            &:hover {
+                @include hoverButton($color-gray-1, $color-black-light, $color-gray-1);
+            }
+        }
+        .searchForm {
+            flex-grow: 12;
+            .input-group {
+                background: $color-white-cream;
+                .form-control {
+                    height: 44px;
+                    background: transparent;
+                    border: 1px solid transparent;
+                    font-size: 13px;
+                    padding: $pd-1 $pd-1 + 2;
+                    line-height: 1.4;
+                    transition: none;
+                    &:focus {
+                        background: $color-white-0;
+                        box-shadow: none;
+                        border-color: $color-gray-6;
+                        border-right-color: transparent;
+                        &+.input-group-append {
+                            .input-group-text {
+                                background: $color-white-0;
+                                border-color: $color-gray-6;
+                                border-left-color: transparent;
+                                &:hover {
+                                    @include hoverButton($color-red-0, $color-white-0, $color-red-0);
+                                }
+                            }
+                        }
+                    }
+                }
+                .input-group-text {
+                    background: transparent;
+                    border: 1px solid transparent;
+                    color: $color-red-0;
+                    width: 44px;
+                    height: 44px;
+                    &:hover {
+                        @include hoverButton($color-red-0, $color-white-0, $color-red-0);
+                    }
+                }
+            }
+        }
+    }
+    .header__right {
+        .navbar-nav {
+            .business,
+            .teach {
+                @include styleButton(transparent, transparent, 12px, 15px);
+                &:hover {
+                    @include hoverButton($color-gray-1, $color-black-light, $color-gray-1);
+                }
+                @include mediaQuery('extra-large') {
+                    display: none;
+                }
+            }
+            .teach {
+                position: relative;
+                &::after {
+                    content: '';
+                    position: absolute;
+                    right: -10px;
+                    bottom: 10%;
+                    width: 1px;
+                    height: 80%;
+                    background-color: $color-gray-6;
+                }
+            }
+            .cart {
+                width: 45px;
+                margin: 0 20px;
+                @include styleButton(transparent, transparent, 0, 0);
+                border-radius: 50%;
+                .fa {
+                    font-size: $fs-3;
+                }
+                &:hover {
+                    @include hoverButton($color-gray-1, $color-black-light, $color-gray-1);
+                }
+                @include mediaQuery('large') {
+                    display: block !important;
+                }
+            }
+        }
+    }
+}

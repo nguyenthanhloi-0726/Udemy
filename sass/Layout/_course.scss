@@ -1,0 +1,110 @@
+.myCourse {
+    margin-top: $mg-2;
+    .course_content {
+        .course__left {
+            background-color: $color-gray-5;
+            .course__left__content {
+                padding: 0 $pd-4;
+                h3 {
+                    @include styleText($color-black-0, $fs-2 - 1, $fw-bold-0);
+                }
+                p {
+                    @include styleText($color-black-0, $fs-0 + 1, $fw-normal);
+                }
+            }
+            @include mediaQuery('large') {
+                display: none !important;
+            }
+        }
+        .course__right {
+            // width: 689px;
+            .nav {
+                overflow: auto;
+                overflow-y: hidden;
+                border: none;
+                .nav-item {
+                    .nav-link.active {
+                        border: none;
+                        border-bottom: 5px solid $color-blue;
+                    }
+                    .nav-link {
+                        @include styleText($color-black-0, $fs-0, $fw-normal);
+                        border: none;
+                        white-space: normal;
+                        padding: 11px 14px;
+                        height: 100%;
+                        display: flex;
+                        align-items: center;
+                        border-bottom: 5px solid transparent;
+                        @include mediaQuery('extra-large') {
+                            padding: 11px 10px;
+                        }
+                        @include mediaQuery('large') {
+                            padding: 11px 12px;
+                        }
+                    }
+                }
+            }
+            .tab-content {
+                position: relative;
+                margin-top: $mg-2;
+                .card {
+                    .card-img {
+                        background: #29303b;
+                    }
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        left: 0;
+                        top: 0;
+                        width: 100%;
+                        height: 100%;
+                        transition: .2s ease;
+                        box-shadow: 0 0 1px 1px rgba(20, 23, 28, .1), 0 3px 1px 0 rgba(20, 23, 28, .1) !important;
+                    }
+                    &:hover {
+                        &::after {
+                            box-shadow: 0 2px 8px 2px rgba(20, 23, 28, 0.15) !important;
+                        }
+                        img {
+                            opacity: .5;
+                        }
+                    }
+                }
+                .card-title {
+                    @include styleText($color-black-0, $fs-0, $fw-bold);
+                    display: -webkit-box;
+                    -webkit-line-clamp: 2;
+                    -webkit-box-orient: vertical;
+                    overflow: hidden;
+                }
+                .card-text {
+                    @include styleText($color-gray-4, $fs-1, $fw-normal);
+                }
+                .rating {
+                    display: flex;
+                    .rating_star {
+                        @include styleText($color-yellow, $fs-1, $fw-normal);
+                    }
+                    span:nth-child(2) {
+                        @include styleText($color-gray-4, $fs-1, $fw-bold);
+                    }
+                    span:nth-child(3) {
+                        @include styleText($color-gray-4, $fs-1, $fw-normal);
+                    }
+                }
+                .price {
+                    text-align: right;
+                    margin-top: $mg-1;
+                    .old-price {
+                        @include styleText($color-gray-4, $fs-1, $fw-normal);
+                        text-decoration: line-through;
+                    }
+                    .new-price {
+                        @include styleText($color-black-0, $fs-2, $fw-bold);
+                    }
+                }
+            }
+        }
+    }
+}

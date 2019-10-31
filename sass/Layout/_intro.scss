@@ -1,0 +1,31 @@
+.myIntro {
+    @include mediaQuery('medium') {
+        display: none;
+    }
+    background: linear-gradient(to right, $color-purple, $color-red-0);
+    .intro_content {
+        .intro_item {
+            .icon {
+                @include styleText($color-white-0, 52px, $fw-normal);
+                margin-right: $mg-2;
+                @include mediaQuery('extra-large') {
+                    display: none;
+                }
+            }
+            .icon_content {
+                padding: $pd-2 $pd-0 + $pd-0;
+                @include mediaQuery('extra-large') {
+                    text-align: center;
+                }
+                p:first-child {
+                    @include styleText($color-white-0, $fs-0 + 2, $fw-bold);
+                    margin-bottom: 0;
+                }
+                p:last-child {
+                    @include styleText($color-white-0, $fs-0, $fw-normal);
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+}
